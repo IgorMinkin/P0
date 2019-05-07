@@ -41,5 +41,5 @@ def test():
     assert(len(set(all_numbers)) == len(distinct_numbers))
 
 test()
-""" Order O(n^2) """
+""" Order O(n^2) - nested loops resulting in worst case runtime of n^2 """
 print("There are {} different telephone numbers in the records.".format(len(distinct_numbers)))

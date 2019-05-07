@@ -1,0 +1,38 @@
+Task 0:
+
+Order O(1) - index lookups on arrays are constant time
+
+Task 1:
+
+Order O(n^2) - nested loops resulting in worst case runtime of n^2
+
+Task 2:
+
+ Function 'aggregate_total_duration_by_number' has order of O(n^2). It has to iterate once through 
+ each call and then for each call it has to see if callee and caller already have a record. Worst
+ case runtime is O(2n^2) or O(n^2). To find party with longest time on phone you have to iterate
+ through the resulting list once so linear time - O(n). Total would be O(2n^2 + n) or O(n^2)
+
+Task 3:
+
+Part A
+Function "get_bangalore_callees" is looping over the list of all calls. For each call it invokes the following functions:
+  - is_from_bangalore: checks a substring so constant time O(1)
+  - parse_area_code_or_prefix: iterates over the length of the input string (phone number) so constant time in relation to length of input array. O(n) in relation to size of input string
+  - add_with_order: iterates over the length of the input collection to determine the correct insertion position so linear: O(n)
+Combined: O(n * (1 + 1 + n)) = O(2n + n^2) ~ O(n^2)
+
+Part B
+Function "calls_from_bangalore_to_bangalore" iterates over the input array and checks if caller is from Bangalore and if so checks if callee is from Bangalore. Worst case
+scenario all calls are from/to Bangalore so combined order: O(n + n + 1) ~ O(n)
+
+Task 4:
+
+Function "find_telemarketers" loops over the list of all calls "O(n)" and:
+    - checks if the number has already been flagged as suspect by looping through list of suspect numbers: "O(n)"
+    - checks if the number has already been cleared by looping through list of suspect numbers: "O(n)"
+    - checks if number has had any incoming calls by looping through the list of calls again: "O(n)"
+    - checks if number has sent or received any text messages by looping through the list of text messages: "O(n)"
+    - if all checks negative adds the number to the list of suspects in lexicographic order with no duplicates: "O(n)"
+
+Combined order: O(n * (5n)) = O(5n^2) ~ O(n^2)

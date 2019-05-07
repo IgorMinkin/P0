@@ -24,7 +24,9 @@ print("First record of texts, {} texts {} at time {}".format(texts[0][0], texts[
 
 number_of_calls = len(calls)
 index_of_last_call = number_of_calls - 1
-""" Order O(1)"""
+""" 
+Order O(1) - index lookups on arrays are constant time
+"""
 print("Last record of calls, {} calls {} at time {}, lasting {} seconds".format(
     calls[index_of_last_call][0], 
     calls[index_of_last_call][1], 
